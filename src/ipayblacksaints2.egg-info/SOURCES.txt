@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.cfg
+src/ipayblacksaints2.egg-info/PKG-INFO
+src/ipayblacksaints2.egg-info/SOURCES.txt
+src/ipayblacksaints2.egg-info/dependency_links.txt
+src/ipayblacksaints2.egg-info/top_level.txt
