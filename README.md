@@ -1,2 +1,1 @@
-# ipay-platform
-U.S. fiat-native payment system infrastructure
+# Placeholder for README.md
