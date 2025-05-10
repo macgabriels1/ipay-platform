@@ -1,1 +1,28 @@
-# GitHub Actions release workflow placeholder
+name: Release Tagging
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Build Package
+        run: python -m build
+
+      - name: Upload to TestPyPI
+        run: |
+          pip install twine
+          twine upload --repository testpypi dist/*
+        env:
+          TWINE_USERNAME: ${{ secrets.TESTPYPI_USER }}
+          TWINE_PASSWORD: ${{ secrets.TESTPYPI_PASS }}
